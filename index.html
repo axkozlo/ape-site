@@ -8,38 +8,32 @@
   </head>
   <body>
     <div class="container">
-      <section class="hero">
-        <img src="OK.png" alt="APE Logo" class="logo" />
-        <h1>$APE</h1>
-        <p>the average experience of a penis (male)</p>
+      <img src="OK.png" alt="APE Logo" class="logo" />
 
-        <!-- Buttons -->
-        <a href="https://jup.ag/swap/SOL-APE" class="btn" target="_blank">Buy on Jupiter</a>
-        <a href="https://x.com/APEonSOLANAL" class="btn" target="_blank">X</a>
+      <h1>$APE</h1>
+      <p class="tagline">the average experience of a penis (male)</p>
+
+      <div class="nav-buttons">
+        <a href="#" onclick="showPopup()" class="btn">Twitter</a>
         <a href="https://x.com/i/communities/1951014559629889947" class="btn" target="_blank">X Community</a>
-        <a href="https://dexscreener.com/solana/PUT_TOKEN_ADDRESS_HERE" class="btn" target="_blank">DEXScreener</a>
         <a href="https://memedepot.com/d/average-penis-experience" class="btn" target="_blank">Memes</a>
-      </section>
+        <a href="#" onclick="showPopup()" class="btn">Telegram</a>
+      </div>
 
-      <section class="about">
-        <h2>$APE</h2>
-        <p>a memecoin for every man who's ever been alone, mid, broke, and horny with no pussy</p>
-      </section>
-
-      <section class="contract">
+      <div class="bottom-buttons">
         <div class="ca-container">
           <span class="ca-text" id="contract-address">XXXXX</span>
           <button class="link-button" onclick="copyCA()">Copy</button>
+          <a href="https://jup.ag/swap/SOL-APE" class="link-button" target="_blank">Buy</a>
+          <a href="https://dexscreener.com/solana/PUT_TOKEN_ADDRESS_HERE" class="link-button" target="_blank">DEXScreener</a>
         </div>
-      </section>
+      </div>
 
       <footer class="footer">
-        <a href="https://twitter.com/APEonSOLANAL" target="_blank">Twitter</a>
-        <span> | </span>
-        <a href="#" onclick="showPopup()">Telegram</a>
+        <span>$APE</span>
+        <p>a memecoin for every man who's ever been alone, mid, broke, and horny with no pussy</p>
       </footer>
 
-      <!-- Popup -->
       <div id="popup" class="popup">
         <div class="popup-box">
           <p>FUCK YOU NIGGER 🍆🐒</p>
@@ -48,38 +42,33 @@
       </div>
     </div>
 
-    <!-- Scripts -->
-<script>
-  function showPopup() {
-    document.getElementById("popup").style.display = "flex";
-  }
+    <audio id="bg-music" autoplay loop>
+      <source src="silent-hill.mp3" type="audio/mpeg" />
+    </audio>
 
-  function closePopup() {
-    document.getElementById("popup").style.display = "none";
-  }
+    <script>
+      function showPopup() {
+        document.getElementById("popup").style.display = "flex";
+      }
 
-  function copyCA() {
-    const ca = document.getElementById("contract-address").textContent;
-    navigator.clipboard.writeText(ca).then(() => {
-      alert("Copied!");
-    });
-  }
+      function closePopup() {
+        document.getElementById("popup").style.display = "none";
+      }
 
-  // Play background music after first user click
-  window.addEventListener("click", () => {
-    const audio = document.getElementById("bg-music");
-    if (audio && audio.paused) {
-      audio.play().catch(err => {
-        console.log("Autoplay blocked:", err);
-      });
-    }
-  }, { once: true });
-</script>
+      function copyCA() {
+        const ca = document.getElementById("contract-address").textContent;
+        navigator.clipboard.writeText(ca).then(() => {
+          alert("Copied!");
+        });
+      }
 
-<audio id="bg-music" loop>
-  <source src="silent-hill.mp3" type="audio/mpeg" />
-  Your browser does not support the audio element.
-</audio>
-
-</body>
+      // Fix autoplay block
+      window.addEventListener("click", () => {
+        const audio = document.getElementById("bg-music");
+        if (audio && audio.paused) {
+          audio.play().catch(err => console.log("Autoplay blocked:", err));
+        }
+      }, { once: true });
+    </script>
+  </body>
 </html>
