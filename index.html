@@ -1,74 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>$APE</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  </head>
-  <body>
-    <div class="container">
-      <img src="OK.png" alt="APE Logo" class="logo" />
+body {
+  cursor: url('cursor.png') 32 32, auto;
+  margin: 0;
+  padding: 0;
+  background: url('background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  color: #251d11;
+  text-align: center;
+}
 
-      <h1>$APE</h1>
-      <p class="tagline">the average experience of a penis (male)</p>
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 40px 20px;
+  margin: auto;
+  max-width: 500px;
+  border-radius: 12px;
+}
 
-      <div class="nav-buttons">
-        <a href="#" onclick="showPopup()" class="btn">Twitter</a>
-        <a href="https://x.com/i/communities/1951014559629889947" class="btn" target="_blank">X Community</a>
-        <a href="https://memedepot.com/d/average-penis-experience" class="btn" target="_blank">Memes</a>
-        <a href="#" onclick="showPopup()" class="btn">Telegram</a>
-      </div>
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #cda87b;
+}
 
-      <div class="bottom-buttons">
-        <div class="ca-container">
-          <span class="ca-text" id="contract-address">XXXXX</span>
-          <button class="link-button" onclick="copyCA()">Copy</button>
-          <a href="https://jup.ag/swap/SOL-APE" class="link-button" target="_blank">Buy</a>
-          <a href="https://dexscreener.com/solana/PUT_TOKEN_ADDRESS_HERE" class="link-button" target="_blank">DEXScreener</a>
-        </div>
-      </div>
+p {
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  color: #ffffff;
+}
 
-      <footer class="footer">
-        <span>$APE</span>
-        <p>a memecoin for every man who's ever been alone, mid, broke, and horny with no pussy</p>
-      </footer>
+.btn {
+  background-color: #cda87b;
+  border: none;
+  border-radius: 20px;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #251d11;
+  margin: 10px auto;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s ease-in-out;
+}
 
-      <div id="popup" class="popup">
-        <div class="popup-box">
-          <p>F🍆🐒</p>
-          <button onclick="closePopup()">OK</button>
-        </div>
-      </div>
-    </div>
+.btn:hover {
+  transform: scale(1.05);
+}
 
-    <audio id="bg-music" autoplay loop>
-      <source src="silent-hill.mp3" type="audio/mpeg" />
-    </audio>
+.footer {
+  background-color: #5d3a29;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
 
-    <script>
-      function showPopup() {
-        document.getElementById("popup").style.display = "flex";
-      }
+.footer .btn {
+  margin: 5px;
+  font-size: 14px;
+  padding: 8px 16px;
+}
 
-      function closePopup() {
-        document.getElementById("popup").style.display = "none";
-      }
+#contract-address {
+  font-weight: bold;
+  margin-right: 10px;
+  color: #ffffff;
+}
 
-      function copyCA() {
-        const ca = document.getElementById("contract-address").textContent;
-        navigator.clipboard.writeText(ca).then(() => {
-          alert("Copied!");
-        });
-      }
-
-      // Fix autoplay block
-      window.addEventListener("click", () => {
-        const audio = document.getElementById("bg-music");
-        if (audio && audio.paused) {
-          audio.play().catch(err => console.log("Autoplay blocked:", err));
-        }
-      }, { once: true });
-    </script>
-  </body>
-</html>
+.popup {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 14px;
+  display: none;
+  z-index: 9999;
+}
