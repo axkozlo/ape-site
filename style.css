@@ -152,3 +152,10 @@ a.button {
     font-size: 14px;
   }
 }
+
+.button {
+  font-size: 1rem;
+  font-family: inherit;
+  font-weight: bold;
+  text-align: center;
+}
