@@ -42,42 +42,44 @@
       <!-- Popup -->
       <div id="popup" class="popup">
         <div class="popup-box">
-          <p>Telegram link is in TG. Stop asking. 🐒</p>
+          <p>FUCK YOU NIGGER 🍆🐒</p>
           <button onclick="closePopup()">OK</button>
         </div>
       </div>
     </div>
 
     <!-- Scripts -->
-    <script>
-      function showPopup() {
-        document.getElementById("popup").style.display = "flex";
-      }
+<script>
+  function showPopup() {
+    document.getElementById("popup").style.display = "flex";
+  }
 
-      function closePopup() {
-        document.getElementById("popup").style.display = "none";
-      }
+  function closePopup() {
+    document.getElementById("popup").style.display = "none";
+  }
 
-      function copyCA() {
-        const ca = document.getElementById("contract-address").textContent;
-        navigator.clipboard.writeText(ca).then(() => {
-          alert("Copied!");
-        });
-      }
+  function copyCA() {
+    const ca = document.getElementById("contract-address").textContent;
+    navigator.clipboard.writeText(ca).then(() => {
+      alert("Copied!");
+    });
+  }
 
-      // Play music on user interaction
-      window.addEventListener("click", () => {
-        const audio = document.getElementById("bg-music");
-        if (audio && audio.paused) {
-          audio.play().catch((e) => console.log("Autoplay blocked:", e));
-        }
-      }, { once: true });
-    </script>
+  // Play background music after first user click
+  window.addEventListener("click", () => {
+    const audio = document.getElementById("bg-music");
+    if (audio && audio.paused) {
+      audio.play().catch(err => {
+        console.log("Autoplay blocked:", err);
+      });
+    }
+  }, { once: true });
+</script>
 
-    <!-- Background Music -->
-    <audio id="bg-music" loop>
-      <source src="silent-hill.mp3" type="audio/mpeg" />
-      Your browser does not support the audio element.
-    </audio>
-  </body>
+<audio id="bg-music" loop>
+  <source src="silent-hill.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+
+</body>
 </html>
