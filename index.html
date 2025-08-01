@@ -1,78 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>$APE</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  </head>
-  <body>
-    <div class="container">
-      <section class="hero">
-        <h1>$APE</h1>
-        <p>the average experience of a penis (male)</p>
-        <a href="https://x.com/APEonSOLANAL" class="btn" target="_blank">X</a>
-        <a href="https://x.com/i/communities/1951014559629889947" class="btn" target="_blank">X Community</a>
-        <a href="https://memedepot.com/d/average-penis-experience" class="btn" target="_blank">Memes</a>
-        <a href="#" class="btn" onclick="showPopup()">Telegram</a>
+<head>
+  <meta charset="UTF-8" />
+  <title>$APE</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    function copyCA() {
+      navigator.clipboard.writeText("XXXXX");
+      alert("CA copied!");
+    }
 
-        <div class="ca-container">
-          <span class="ca-text" id="contract-address">XXXXX</span>
-          <button class="btn small" onclick="copyCA()">Copy</button>
-        </div>
+    function showTelegram() {
+      const popup = document.getElementById("telegram-popup");
+      popup.style.display = "block";
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 2500);
+    }
 
-        <a href="https://jup.ag/swap/SOL-APE" class="btn" target="_blank">Buy</a>
-        <a href="https://dexscreener.com/solana/PUT_TOKEN_ADDRESS_HERE" class="btn" target="_blank">DEXScreener</a>
-      </section>
+    // Enable autoplay after user interacts (required by browser policies)
+    function enableMusic() {
+      const audio = document.getElementById("bg-music");
+      if (audio.paused) {
+        audio.play().catch(e => console.log("Autoplay blocked:", e));
+      }
+      document.removeEventListener('click', enableMusic);
+    }
 
-      <section class="about">
-        <p>a memecoin for every man who's ever been alone, mid, broke, and horny with no pussy</p>
-      </section>
+    document.addEventListener('click', enableMusic);
+  </script>
+</head>
+<body>
+  <!-- Background music -->
+  <audio id="bg-music" loop>
+    <source src="music.mp3" type="audio/mpeg" />
+  </audio>
 
-      <footer class="footer">
-        <a href="https://twitter.com/APEonSOLANAL" target="_blank">X</a>
-        <span> | </span>
-        <a href="#" onclick="showPopup()">Telegram</a>
-      </footer>
+  <!-- Main Overlay -->
+  <div class="overlay">
+    <h1>$APE</h1>
+    <p>the average experience of a penis (male)</p>
 
-      <div id="popup" class="popup">
-        <div class="popup-box">
-          <p>FUCK YOU NIGGER 🍆🐒</p>
-          <button onclick="closePopup()">OK</button>
-        </div>
-      </div>
+    <div class="button-wrapper" id="middle-links">
+      <a href="https://x.com/APEonSOLANAL" class="btn">X</a>
+      <a href="https://x.com/i/communities/1951014559629889947" class="btn">X Community</a>
+      <a href="https://memedepot.com/d/average-penis-experience" class="btn">Memes</a>
+      <button class="btn" onclick="showTelegram()">Telegram</button>
     </div>
 
-    <script>
-      function showPopup() {
-        document.getElementById("popup").style.display = "flex";
-      }
+    <div class="button-wrapper" id="footer-actions">
+      <p class="ca-text">XXXXX</p>
+      <button class="btn" onclick="copyCA()">Copy</button>
+      <a href="https://jup.ag/swap" class="btn">Buy</a>
+      <a href="https://dexscreener.com/solana/YOUR_COIN" class="btn">DEXScreener</a>
+    </div>
 
-      function closePopup() {
-        document.getElementById("popup").style.display = "none";
-      }
+    <p class="slogan">a memecoin for every man who's ever been alone, mid, broke, and horny with no pussy</p>
+  </div>
 
-      function copyCA() {
-        const ca = document.getElementById("contract-address").textContent;
-        navigator.clipboard.writeText(ca).then(() => {
-          alert("Copied!");
-        });
-      }
+  <!-- Sticky footer like ChillHouse -->
+  <div id="footer">
+    <a href="https://x.com/YOUR_X">X</a> |
+    <a href="https://t.me/YOUR_TELEGRAM">Telegram</a>
+  </div>
 
-      // Required to allow autoplay on browsers
-      window.addEventListener("click", () => {
-        const audio = document.getElementById("bg-music");
-        if (audio && audio.paused) {
-          audio.play().catch((err) => {
-            console.log("Autoplay blocked:", err);
-          });
-        }
-      }, { once: true });
-    </script>
-
-    <audio id="bg-music" loop>
-      <source src="silent-hill.mp3" type="audio/mpeg" />
-      Your browser does not support the audio element.
-    </audio>
-  </body>
+  <!-- Telegram Popup -->
+  <div id="telegram-popup">
+    Join us on Telegram: <a href="https://t.me/YOUR_TELEGRAM" target="_blank">t.me/YOUR_TELEGRAM</a>
+  </div>
+</body>
 </html>
