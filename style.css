@@ -1,92 +1,71 @@
 body {
-  cursor: url('cursor.png') 32 32, auto;
-  margin: 0;
-  padding: 0;
   background: url('background.jpg') no-repeat center center fixed;
   background-size: cover;
-  font-family: Arial, sans-serif;
   color: #251d11;
-  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  cursor: url('cursor.png') 32 32, auto;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+.overlay {
   background-color: rgba(0, 0, 0, 0.4);
-  padding: 40px 20px;
-  margin: auto;
-  max-width: 500px;
-  border-radius: 12px;
+  min-height: 100vh;
+  padding-top: 40px;
+  text-align: center;
 }
 
 h1 {
   font-size: 36px;
-  margin-bottom: 10px;
   color: #cda87b;
+  margin-bottom: 10px;
 }
 
 p {
   font-size: 16px;
-  max-width: 600px;
-  margin: 0 auto 20px;
-  color: #ffffff;
+  color: #fff;
 }
 
 .btn {
   background-color: #cda87b;
-  border: none;
-  border-radius: 20px;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: bold;
   color: #251d11;
-  margin: 10px auto;
+  font-weight: bold;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin: 10px;
   cursor: pointer;
-  width: 100%;
-  max-width: 300px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  transition: all 0.2s ease-in-out;
+  transition: background-color 0.2s;
+  display: inline-block;
 }
 
 .btn:hover {
-  transform: scale(1.05);
+  background-color: #e5c59c;
 }
 
-.footer {
-  background-color: #5d3a29;
+.button-wrapper {
+  background-color: rgba(0, 0, 0, 0.4);
+  display: inline-block;
   padding: 20px;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
+  border-radius: 20px;
+}
+
+#middle-links,
+#footer-actions {
+  margin-top: 20px;
+}
+
+#footer {
+  background-color: #5d3a29;
+  padding: 10px 0;
   text-align: center;
-  z-index: 10;
 }
 
-.footer .btn {
-  margin: 5px;
-  font-size: 14px;
-  padding: 8px 16px;
+#footer a {
+  color: #cda87b;
+  margin: 0 10px;
+  text-decoration: none;
 }
 
-#contract-address {
-  font-weight: bold;
-  margin-right: 10px;
-  color: #ffffff;
-}
-
-.popup {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 10px;
-  font-size: 14px;
-  display: none;
-  z-index: 9999;
+#footer a:hover {
+  text-decoration: underline;
 }
