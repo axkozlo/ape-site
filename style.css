@@ -100,3 +100,55 @@ a.button:hover {
 audio {
   display: none;
 }
+
+/* Ensure the whole body scales properly */
+body {
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+/* Make buttons adapt to screen size */
+button,
+a.button {
+  width: 90%;
+  max-width: 300px;
+  margin: 10px auto;
+  font-size: 1rem;
+}
+
+/* Responsive footer */
+.footer {
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+}
+
+.footer span {
+  display: block;
+  margin: 6px 0;
+}
+
+/* Mobile layout tweak for main container */
+@media (max-width: 768px) {
+  .overlay {
+    padding: 20px 10px;
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .button-container {
+    padding: 15px 10px;
+  }
+
+  #popup {
+    bottom: 120px;
+    font-size: 14px;
+  }
+}
