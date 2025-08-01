@@ -1,78 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  </head>
-  <body>
-    <div class="container">
-      <section class="hero">
-        <h1>$APE</h1>
-        <p>the average experience of a penis (male)</p>
-        <a href="https://x.com/APEonSOLANAL" class="btn" target="_blank">Twitter</a>
-        <a href="https://x.com/i/communities/1951014559629889947" class="btn" target="_blank">X Community</a>
-        <a href="https://memedepot.com/d/average-penis-experience" class="btn" target="_blank">Memes</a>
-        <a href="#" class="btn" onclick="showPopup()">Telegram</a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>$APE</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: url("background.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: #251d11;
+      cursor: url("cursor.png"), auto;
+    }
 
-        <div class="ca-container">
-          <span class="ca-text" id="contract-address">XXXXX</span>
-          <button class="btn small" onclick="copyCA()">Copy</button>
-        </div>
+    .overlay {
+      background-color: rgba(0, 0, 0, 0.35);
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 3vh;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
 
-        <a href="https://jup.ag/swap/SOL-APE" class="btn" target="_blank">Buy</a>
-        <a href="https://dexscreener.com/solana/PUT_TOKEN_ADDRESS_HERE" class="btn" target="_blank">DEXScreener</a>
-      </section>
+    h1 {
+      font-size: 2em;
+      font-weight: bold;
+      margin: 0 0 10px;
+      color: #cda87b;
+    }
 
-      <section class="about">
-        <h2>$APE</h2>
-        <p>a memecoin for every man who's ever been alone, mid, broke, and horny with no pussy</p>
-      </section>
+    p.tagline {
+      font-size: 0.9em;
+      margin-bottom: 30px;
+      color: #fff;
+    }
 
-      <footer class="footer">
-        <a href="https://twitter.com/APEonSOLANAL" target="_blank">Twitter</a>
-        <span> | </span>
-        <a href="#" onclick="showPopup()">Telegram</a>
-      </footer>
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
-      <div id="popup" class="popup">
-        <div class="popup-box">
-          <p>F🍆🐒</p>
-          <button onclick="closePopup()">OK</button>
-        </div>
-      </div>
+    .button-group a, .button-group button {
+      background-color: #cda87b;
+      color: #251d11;
+      font-weight: bold;
+      padding: 12px;
+      border-radius: 20px;
+      text-decoration: none;
+      text-align: center;
+      transition: 0.2s;
+      border: none;
+    }
+
+    .button-group a:hover, .button-group button:hover {
+      opacity: 0.8;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2rem;
+      z-index: 9999;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #5d3a29;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0;
+      gap: 10px;
+      z-index: 10;
+    }
+
+    .footer span {
+      font-weight: bold;
+      color: #fff;
+      font-size: 0.9em;
+    }
+
+    .copy-btn, .buy-btn {
+      background-color: #007bff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .copy-btn:hover, .buy-btn:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>$APE</h1>
+    <p class="tagline">the average experience of a penis (male)<br>a memecoin for every man who's ever been alone, mid, broke, and horny with no pussy</p>
+
+    <div class="button-group">
+      <a href="https://x.com/APEonSOLANAL" target="_blank">X</a>
+      <a href="https://x.com/i/communities/1951014559629889947" target="_blank">X Community</a>
+      <a href="https://memedepot.com/d/average-penis-experience">Memes</a>
+      <button onclick="showPopup()">Telegram</button>
+      <a href="https://dexscreener.com/solana" target="_blank">DEXscreener</a>
     </div>
+  </div>
 
-    <script>
-      function showPopup() {
-        document.getElementById("popup").style.display = "flex";
-      }
+  <div class="footer">
+    <span id="contract-address">CUM</span>
+    <button class="copy-btn" onclick="copyCA()">Copy CA</button>
+    <a class="buy-btn" href="https://jup.ag" target="_blank">BUY</a>
+  </div>
 
-      function closePopup() {
-        document.getElementById("popup").style.display = "none";
-      }
+  <div class="popup" id="popup" onclick="closePopup()">
+    FUCK.
+  </div>
 
-      function copyCA() {
-        const ca = document.getElementById("contract-address").textContent;
-        navigator.clipboard.writeText(ca).then(() => {
-          alert("Copied!");
+  <audio id="bg-music" loop>
+    <source src="silent-hill.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script>
+    function showPopup() {
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+
+    function copyCA() {
+      const ca = document.getElementById("contract-address").textContent;
+      navigator.clipboard.writeText(ca).then(() => {
+        alert("Copied!");
+      });
+    }
+
+    window.addEventListener("click", () => {
+      const audio = document.getElementById("bg-music");
+      if (audio && audio.paused) {
+        audio.play().catch(err => {
+          console.log("Autoplay blocked:", err);
         });
       }
-
-      // Required to allow autoplay on browsers
-      window.addEventListener("click", () => {
-        const audio = document.getElementById("bg-music");
-        if (audio && audio.paused) {
-          audio.play().catch((err) => {
-            console.log("Autoplay blocked:", err);
-          });
-        }
-      }, { once: true });
-    </script>
-
-    <audio id="bg-music" loop>
-      <source src="silent-hill.mp3" type="audio/mpeg" />
-      Your browser does not support the audio element.
-    </audio>
-  </body>
+    }, { once: true });
+  </script>
+</body>
 </html>
