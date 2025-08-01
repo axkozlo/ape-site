@@ -12,6 +12,8 @@
         <img src="OK.png" alt="APE Logo" class="logo" />
         <h1>$APE</h1>
         <p>the average experience of a penis (male)</p>
+
+        <!-- Buttons -->
         <a href="https://jup.ag/swap/SOL-APE" class="btn" target="_blank">Buy on Jupiter</a>
         <a href="https://x.com/APEonSOLANAL" class="btn" target="_blank">X</a>
         <a href="https://x.com/i/communities/1951014559629889947" class="btn" target="_blank">X Community</a>
@@ -37,14 +39,16 @@
         <a href="#" onclick="showPopup()">Telegram</a>
       </footer>
 
+      <!-- Popup -->
       <div id="popup" class="popup">
         <div class="popup-box">
-          <p>FUCK YOU NIGGER 🍆🐒</p>
+          <p>Telegram link is in TG. Stop asking. 🐒</p>
           <button onclick="closePopup()">OK</button>
         </div>
       </div>
     </div>
 
+    <!-- Scripts -->
     <script>
       function showPopup() {
         document.getElementById("popup").style.display = "flex";
@@ -60,10 +64,20 @@
           alert("Copied!");
         });
       }
+
+      // Play music on user interaction
+      window.addEventListener("click", () => {
+        const audio = document.getElementById("bg-music");
+        if (audio && audio.paused) {
+          audio.play().catch((e) => console.log("Autoplay blocked:", e));
+        }
+      }, { once: true });
     </script>
-<audio id="bg-music" autoplay loop>
-  <source src="silent-hill.mp3" type="audio/mpeg" />
-  Your browser does not support the audio element.
-</audio>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+      <source src="silent-hill.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
+    </audio>
   </body>
 </html>
